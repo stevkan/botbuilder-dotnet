@@ -67,6 +67,7 @@ namespace Microsoft.Bot.Builder
             switch (turnContext.Activity.Type)
             {
                 case ActivityTypes.Message:
+                    turnContext.Activity.Text = "this is will break the build";
                     await OnMessageActivityAsync(new DelegatingTurnContext<IMessageActivity>(turnContext), cancellationToken).ConfigureAwait(false);
                     break;
 
